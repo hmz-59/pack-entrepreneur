@@ -1,230 +1,110 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WebZen Pro — Clé en main, malin et serein</title>
-  <meta name="description" content="Sites vitrines et boutiques Shopify clé en main pour petits entrepreneurs. Packs accessibles, livrés vite. Contact WhatsApp ou email, paiement par virement." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizBoost - Des sites simples, rapides et efficaces</title>
   <style>
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    .soft{box-shadow:0 12px 30px rgba(2,6,23,.08)}
-    .ring-soft{box-shadow:0 0 0 10px rgba(2,6,23,.04)}
-    .brand{color:#0B4F9A} .brand-bg{background:#0B4F9A}
-    .accent{color:#FDB022} .accent-bg{background:#FDB022}
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #f5f5f5; color: #333; }
+
+    /* Bannière */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 { font-size: 3rem; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px; }
+    .hero p { font-size: 1.3rem; margin-top: 10px; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 8px; }
+
+    /* Sections */
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 30px; }
+
+    /* Packs */
+    .packs { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .pack {
+      background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      flex: 1 1 250px; text-align: center;
+    }
+    .pack h3 { color: #0077cc; }
+    .price { font-size: 1.5rem; margin: 10px 0; color: #e67e22; }
+
+    /* Avis */
+    .avis { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .avis-item {
+      background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-style: italic;
+    }
+
+    /* Contact */
+    .contact { text-align: center; background: #0077cc; color: white; padding: 40px 20px; }
+    .contact a { color: #fff; font-weight: bold; text-decoration: none; }
   </style>
 </head>
-<body class="bg-white text-slate-900">
+<body>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-white/85 border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl brand-bg text-white text-sm font-extrabold">WZ</span>
-        <div class="leading-tight">
-          <div class="font-semibold">WebZen Pro</div>
-          <div class="text-xs text-slate-500">Clé en main, malin et serein</div>
-        </div>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#packs" class="hover:opacity-80">Packs</a>
-        <a href="#extras" class="hover:opacity-80">Extras</a>
-        <a href="#faq" class="hover:opacity-80">FAQ</a>
-        <a href="#contact" class="hover:opacity-80">Contact</a>
-      </nav>
-      <div class="hidden md:flex items-center gap-2">
-        <a href="https://wa.me/33626967239" target="_blank" class="rounded-2xl border px-3 py-2 text-sm">WhatsApp</a>
-        <a href="mailto:contact.webzenpro@gmail.com" class="rounded-2xl brand-bg text-white px-4 py-2 text-sm">Email</a>
-      </div>
+  <!-- Bannière -->
+  <div class="hero">
+    <div>
+      <h1>BizBoost 🌐</h1>
+      <p>"Un site qui cartonne, pour ton business qui résonne"</p>
     </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="relative">
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50/60 via-white to-white"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 grid md:grid-cols-2 gap-8 items-center">
-      <div>
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-slate-600 text-xs mb-4">
-          ✨ Spécial petits entrepreneurs — simple, rapide et efficace
-        </div>
-        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-          Des sites qui vendent, à prix intelligents.<br>
-          <span class="brand">Clé en main, malin et serein.</span>
-        </h1>
-        <p class="mt-4 text-slate-600 text-lg">
-          Site vitrine ou boutique Shopify clé en main. Tu contactes, on construit, tu encaisses. Paiement <b>par virement</b>.
-        </p>
-        <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="#packs" class="rounded-2xl brand-bg text-white px-6 py-3 inline-flex items-center justify-center soft">Voir les packs</a>
-          <a href="https://wa.me/33626967239" target="_blank" class="rounded-2xl border border-slate-200 px-6 py-3 inline-flex items-center justify-center">Parler sur WhatsApp</a>
-        </div>
-        <div class="mt-6 flex flex-wrap items-center gap-6 text-sm text-slate-600">
-          <div>✅ Délais courts</div><div>🔧 Maintenance de base</div><div>🧾 Facture</div><div>🔒 Paiement par virement</div>
-        </div>
-      </div>
-      <div class="relative rounded-3xl overflow-hidden soft ring-soft">
-        <!-- Image bannière libre de droits (Unsplash) -->
-        <img src="https://images.unsplash.com/photo-1529336953121-adb2f99f1c14?q=80&w=1400&auto=format&fit=crop" alt="Bannière business moderne" class="w-full h-full object-cover">
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- Packs -->
-  <section id="packs" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="text-center mb-12">
-      <h2 class="text-2xl md:text-4xl font-extrabold">Des packs pensés pour les petits budgets</h2>
-      <p class="mt-2 text-slate-600">Tu démarres ? On s’adapte sans exploser ton budget.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Starter -->
-      <div class="rounded-3xl border border-slate-200 p-6 soft">
-        <div class="flex items-center justify-between">
-          <span class="text-lg font-semibold">Starter</span>
-          <span class="text-2xl font-extrabold">129 €</span>
-        </div>
-        <ul class="space-y-2 mt-4 text-sm">
-          <li>✔ 1 page vitrine (services + contact)</li>
-          <li>✔ Boutons WhatsApp & Email</li>
-          <li>✔ Design propre + mobile</li>
-          <li>✔ Mise en ligne (GitHub Pages / Netlify)</li>
-        </ul>
-        <a href="https://wa.me/33626967239" target="_blank" class="block text-center rounded-2xl brand-bg text-white px-5 py-3 mt-5">Je démarre</a>
-        <p class="text-xs text-slate-500 text-center mt-2">Idéal pour présence rapide et pro.</p>
+  <section>
+    <h2>Nos Packs 🚀</h2>
+    <div class="packs">
+      <div class="pack">
+        <h3>Pack Starter</h3>
+        <p>Site vitrine 1 page, design simple et rapide</p>
+        <p class="price">99€</p>
       </div>
-
-      <!-- Pro -->
-      <div class="rounded-3xl border border-slate-200 p-6 soft ring-soft">
-        <div class="flex items-center justify-between">
-          <span class="text-lg font-semibold">Pro</span>
-          <span class="text-2xl font-extrabold">199 €</span>
-        </div>
-        <ul class="space-y-2 mt-4 text-sm">
-          <li>✔ 3 pages (Accueil, Services, Contact)</li>
-          <li>✔ FAQ + Avis clients</li>
-          <li>✔ WhatsApp, Email, formulaire simple</li>
-          <li>✔ Mises à jour mineures (30 jours)</li>
-        </ul>
-        <a href="https://wa.me/33626967239" target="_blank" class="block text-center rounded-2xl brand-bg text-white px-5 py-3 mt-5">Passer au niveau pro</a>
-        <p class="text-xs text-slate-500 text-center mt-2">Le meilleur rapport qualité/prix.</p>
+      <div class="pack">
+        <h3>Pack Business</h3>
+        <p>Site pro 3 pages + WhatsApp + Contact Mail</p>
+        <p class="price">199€</p>
       </div>
-
-      <!-- E-commerce -->
-      <div class="rounded-3xl border border-slate-200 p-6 soft">
-        <div class="flex items-center justify-between">
-          <span class="text-lg font-semibold">Shopify Clé en Main</span>
-          <span class="text-2xl font-extrabold">299 €</span>
-        </div>
-        <ul class="space-y-2 mt-4 text-sm">
-          <li>✔ Thème pro + configuration boutique</li>
-          <li>✔ Paiement, livraison, pages légales</li>
-          <li>✔ Jusqu’à 5 produits ajoutés</li>
-          <li>✔ Mini-guide d’utilisation</li>
-        </ul>
-        <a href="https://wa.me/33626967239" target="_blank" class="block text-center rounded-2xl brand-bg text-white px-5 py-3 mt-5">Lancer ma boutique</a>
-        <p class="text-xs text-slate-500 text-center mt-2">Parfait pour débuter en e-commerce.</p>
+      <div class="pack">
+        <h3>Pack Premium</h3>
+        <p>Boutique Shopify clé en main + Formation</p>
+        <p class="price">299€</p>
       </div>
     </div>
-    <p class="text-center text-xs text-slate-500 mt-4">Paiement <b>par virement</b>. Acompte possible pour réserver.</p>
   </section>
 
   <!-- Extras -->
-  <section id="extras" class="bg-blue-50/40 border-y">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h3 class="text-2xl md:text-3xl font-extrabold text-center">Extras utiles (petits prix, gros effet)</h3>
-      <div class="grid md:grid-cols-4 gap-6 mt-10">
-        <div class="rounded-3xl border p-6 bg-white soft">
-          <div class="font-semibold">QR Code vers ton site</div>
-          <div class="text-sm text-slate-600 mt-1">Idéal pour cartes/flyers, mène direct à ton site ou WhatsApp.</div>
-          <div class="mt-3 font-extrabold">19 €</div>
-        </div>
-        <div class="rounded-3xl border p-6 bg-white soft">
-          <div class="font-semibold">Flyer A5 prêt à imprimer</div>
-          <div class="text-sm text-slate-600 mt-1">Design + QR code + tes infos. PDF HD.</div>
-          <div class="mt-3 font-extrabold">39 €</div>
-        </div>
-        <div class="rounded-3xl border p-6 bg-white soft">
-          <div class="font-semibold">Logo simple (texte)</div>
-          <div class="text-sm text-slate-600 mt-1">Logo typographique propre + déclinaisons PNG.</div>
-          <div class="mt-3 font-extrabold">49 €</div>
-        </div>
-        <div class="rounded-3xl border p-6 bg-white soft">
-          <div class="font-semibold">SEO Express</div>
-          <div class="text-sm text-slate-600 mt-1">Optimisation Google locale (basiques + conseils).</div>
-          <div class="mt-3 font-extrabold">59 €</div>
-        </div>
-      </div>
-    </div>
+  <section>
+    <h2>Extras 🎁</h2>
+    <ul>
+      <li>Ajout QR Code (redirection vers votre site)</li>
+      <li>Logo personnalisé</li>
+      <li>Bannière sur mesure</li>
+    </ul>
   </section>
 
-  <!-- Avis -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h3 class="text-2xl md:text-3xl font-extrabold text-center">Ils ont lancé avec WebZen Pro</h3>
-    <div class="grid md:grid-cols-3 gap-6 mt-10">
-      <figure class="rounded-3xl border p-6 bg-white soft">
-        <blockquote class="text-slate-700">“Site vitrine propre, prêt en 3 jours. WhatsApp direct, c’est le feu.”</blockquote>
-        <figcaption class="mt-4 text-sm font-semibold">Samir — Livreur</figcaption>
-      </figure>
-      <figure class="rounded-3xl border p-6 bg-white soft">
-        <blockquote class="text-slate-700">“La boutique Shopify tourne bien, j’ai pu mettre mes produits tout seul.”</blockquote>
-        <figcaption class="mt-4 text-sm font-semibold">Leïla — Beauté</figcaption>
-      </figure>
-      <figure class="rounded-3xl border p-6 bg-white soft">
-        <blockquote class="text-slate-700">“Prix corrects, explications claires. Rien à dire.”</blockquote>
-        <figcaption class="mt-4 text-sm font-semibold">Yanis — Artisan</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h3 class="text-2xl md:text-3xl font-extrabold text-center">Questions fréquentes</h3>
-      <div class="mt-10 grid md:grid-cols-2 gap-6">
-        <div class="rounded-3xl border p-6 bg-white soft">
-          <div class="font-semibold">Comment je paie ?</div>
-          <div class="text-sm text-slate-600 mt-2">Par virement bancaire. Un acompte peut être demandé pour démarrer.</div>
-        </div>
-        <div class="rounded-3xl border p-6 bg-white soft">
-          <div class="font-semibold">Quels délais ?</div>
-          <div class="text-sm text-slate-600 mt-2">Starter 2–4 jours, Pro 3–7 jours, Shopify 5–10 jours (selon contenus reçus).</div>
-        </div>
-        <div class="rounded-3xl border p-6 bg-white soft">
-          <div class="font-semibold">Puis-je mettre à jour moi-même ?</div>
-          <div class="text-sm text-slate-600 mt-2">Oui. On fournit un mini-guide et reste dispo pour petites retouches (30 jours).</div>
-        </div>
-        <div class="rounded-3xl border p-6 bg-white soft">
-          <div class="font-semibold">Et si je n’ai pas de logo ?</div>
-          <div class="text-sm text-slate-600 mt-2">On crée un logo texte simple (49 €) ou on met une version temporaire propre.</div>
-        </div>
-      </div>
+  <!-- Avis Clients -->
+  <section>
+    <h2>Ils nous font confiance ⭐</h2>
+    <div class="avis">
+      <div class="avis-item">"Super service, rapide et efficace, je recommande !" - Nadia</div>
+      <div class="avis-item">"Mon site Shopify est prêt en 1 semaine, parfait 👌" - Karim</div>
+      <div class="avis-item">"Un vrai coup de boost pour mon auto-entreprise" - Julien</div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="bg-blue-50/40 border-y">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-      <h3 class="text-2xl md:text-3xl font-extrabold">Contact</h3>
-      <p class="text-slate-600 mt-2">Discutons de ton projet — réponse rapide.</p>
-      <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="https://wa.me/33626967239" target="_blank" class="rounded-2xl brand-bg text-white px-6 py-3 soft inline-flex items-center justify-center">WhatsApp</a>
-        <a href="mailto:contact.webzenpro@gmail.com" class="rounded-2xl border px-6 py-3 soft inline-flex items-center justify-center">Email</a>
-      </div>
-      <p class="text-xs text-slate-500 mt-4">Paiement par virement. Devis gratuit.</p>
-    </div>
-  </section>
+  <div class="contact">
+    <h2>Contactez-nous 📞</h2>
+    <p>WhatsApp : <a href="https://wa.me/33626967239">+33 6 26 96 72 39</a></p>
+    <p>Email : <a href="mailto:contact.bizboost@gmail.com">contact.bizboost@gmail.com</a></p>
+  </div>
 
-  <!-- Footer -->
-  <footer class="bg-slate-900 text-slate-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-xs text-slate-400 flex items-center justify-between">
-      <span>© <span id="year"></span> WebZen Pro — Tous droits réservés.</span>
-      <span>Clé en main, malin et serein</span>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+
+
