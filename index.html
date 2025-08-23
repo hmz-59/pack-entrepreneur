@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#0B4F9A" />
   <style>
     :root{
-      --brand:#0B4F9A; --accent:#FDB022; --bg:#ffffff; --text:#0f172a; --muted:#64748b; --card:#ffffff; --border:#e2e8f0;
+      --brand:#0B4F9A; --accent:#FDB022; --bg:#ffffff; --text:#0f172a; --muted:#64748b; --card:#ffffff; --border:#e2e8f0; --dark:#0f172a;
       --whatsapp:#25D366;
     }
     *{box-sizing:border-box}
@@ -30,19 +30,20 @@
     .logo .slogan{font-size:12px;color:#6b7280}
     nav{display:none;gap:24px;font-size:14px}
     .cta-row{display:none;gap:8px}
+    @media(min-width:768px){nav{display:flex}.cta-row{display:flex}}
+
+    /* Boutons */
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:16px;padding:10px 14px;font-size:14px;border:1px solid var(--border);background:#fff;transition:.18s ease;cursor:pointer}
     .btn:hover{transform:translateY(-1px)}
     .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
     .btn.wa{background:#fff;border-color:#cbd5e1}
     .btn.wa:hover{border-color:var(--whatsapp)}
     .btn.mail{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .btn.white{background:#fff;color:var(--text);border-color:#fff}
+    .btn.dark-outline{border-color:#fff;color:#fff}
+
     .btn-icon{display:inline-flex;align-items:center;gap:10px}
-    .btn-round{width:40px;height:40px;border-radius:50%}
-    .ic{display:inline-block;vertical-align:middle}
-    @media(min-width:768px){
-      nav{display:flex}
-      .cta-row{display:flex}
-    }
+    .icon{width:20px;height:20px;display:inline-block;vertical-align:middle;flex:0 0 auto}
 
     /* Hero bannière */
     .hero{position:relative}
@@ -74,12 +75,12 @@
     .muted{color:var(--muted);font-size:14px}
 
     /* CTA final */
-    .cta-final{background:#0f172a;color:#e5e7eb;text-align:center}
+    .cta-final{background:var(--dark);color:#e5e7eb;text-align:center}
     .cta-final .btn{border-color:rgba(255,255,255,.7);color:#fff}
-    .cta-final .btn.white{background:#fff;color:#0f172a;border-color:#fff}
+    .cta-final .btn.white{background:#fff;color:var(--dark);border-color:#fff}
 
     /* Footer */
-    footer{background:#0f172a;color:#cbd5e1;font-size:12px}
+    footer{background:var(--dark);color:#cbd5e1;font-size:12px}
     footer .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;flex-wrap:wrap;gap:8px}
   </style>
 </head>
@@ -104,17 +105,19 @@
         <a class="focus-ring" href="#contact">Contact</a>
       </nav>
       <div class="cta-row">
-        <!-- Bouton WhatsApp avec icône -->
+        <!-- Header: WA + Mail (icônes visibles) -->
         <a class="btn wa btn-icon focus-ring" href="https://wa.me/33626967239" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
-          <svg class="ic" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
-            <path fill="#25D366" d="M16 .8C7.6.8.8 7.6.8 16c0 2.6.7 5 2 7.1L0 32l9.3-2.7c2 1.1 4.4 1.7 6.7 1.7 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8z"/>
+          <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="15.2" fill="#25D366"/>
             <path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/>
           </svg>
           WhatsApp
         </a>
-        <!-- Bouton Email avec icône -->
         <a class="btn mail btn-icon focus-ring" href="mailto:contact.webzenpro@gmail.com" aria-label="Nous écrire par email">
-          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 13.065L1.5 6h21L12 13.065z"/><path fill="#fff" d="M12 15.935L1.5 9V18c0 .552.448 1 1 1h19c.552 0 1-.448 1-1V9L12 15.935z"/></svg>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#fff" d="M12 13.065L1.5 6h21L12 13.065z"/>
+            <path fill="#fff" d="M12 15.935L1.5 9V18c0 .552.448 1 1 1h19c.552 0 1-.448 1-1V9L12 15.935z"/>
+          </svg>
           Email
         </a>
       </div>
@@ -130,9 +133,10 @@
       <p>Site vitrine ou boutique Shopify clé en main. Tu contactes, on construit, tu encaisses. Paiement <b>par virement</b>.</p>
       <div class="actions">
         <a class="btn white soft focus-ring" href="#packs" aria-label="Voir les packs">Voir les packs</a>
-        <a class="btn focus-ring" style="border-color:#fff;color:#fff" href="https://wa.me/33626967239" target="_blank" rel="noopener" aria-label="Parler sur WhatsApp">
-          <svg class="ic" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
-            <path fill="#25D366" d="M16 .8C7.6.8.8 7.6.8 16c0 2.6.7 5 2 7.1L0 32l9.3-2.7c2 1.1 4.4 1.7 6.7 1.7 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8z"/>
+        <!-- HERO: bouton WhatsApp corrigé -->
+        <a class="btn dark-outline soft focus-ring btn-icon" href="https://wa.me/33626967239" target="_blank" rel="noopener" aria-label="Parler sur WhatsApp">
+          <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="15.2" fill="#25D366"/>
             <path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/>
           </svg>
           Parler sur WhatsApp
@@ -153,7 +157,10 @@
         <div class="card soft"><div class="title">Évolutif</div><p class="muted" style="margin-top:8px">Ajoute des pages, des options ou passe à Shopify.</p></div>
       </div>
       <div style="text-align:center;margin-top:24px">
-        <a class="btn primary soft focus-ring" href="https://wa.me/33626967239" target="_blank" rel="noopener">Commencer sur WhatsApp</a>
+        <a class="btn primary soft focus-ring btn-icon" href="https://wa.me/33626967239" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15.2" fill="#25D366"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
+          Commencer sur WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -177,11 +184,8 @@
             <li>Design propre et responsive</li>
             <li>Mise en ligne (GitHub Pages / Netlify)</li>
           </ul>
-          <a class="btn primary focus-ring" style="margin-top:16px;width:100%" href="https://wa.me/33626967239" target="_blank" rel="noopener">
-            <svg class="ic" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true">
-              <path fill="#25D366" d="M16 .8C7.6.8.8 7.6.8 16c0 2.6.7 5 2 7.1L0 32l9.3-2.7c2 1.1 4.4 1.7 6.7 1.7 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8z"/>
-              <path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/>
-            </svg>
+          <a class="btn primary focus-ring btn-icon" style="margin-top:16px;width:100%" href="https://wa.me/33626967239" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15.2" fill="#25D366"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
             Je démarre
           </a>
           <p class="muted" style="text-align:center;margin-top:8px;font-size:12px">Idéal pour une présence rapide et pro.</p>
@@ -199,8 +203,8 @@
             <li>WhatsApp, Email, formulaire simple</li>
             <li>Mises à jour mineures (30 jours)</li>
           </ul>
-          <a class="btn primary focus-ring" style="margin-top:16px;width:100%" href="https://wa.me/33626967239" target="_blank" rel="noopener">
-            <svg class="ic" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 .8C7.6.8.8 7.6.8 16c0 2.6.7 5 2 7.1L0 32l9.3-2.7c2 1.1 4.4 1.7 6.7 1.7 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8z"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
+          <a class="btn primary focus-ring btn-icon" style="margin-top:16px;width:100%" href="https://wa.me/33626967239" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15.2" fill="#25D366"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
             Passer au niveau pro
           </a>
           <p class="muted" style="text-align:center;margin-top:8px;font-size:12px">Le meilleur rapport qualité/prix.</p>
@@ -218,8 +222,8 @@
             <li>Jusqu’à 5 produits ajoutés</li>
             <li>Mini-guide d’utilisation</li>
           </ul>
-          <a class="btn primary focus-ring" style="margin-top:16px;width:100%" href="https://wa.me/33626967239" target="_blank" rel="noopener">
-            <svg class="ic" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 .8C7.6.8.8 7.6.8 16c0 2.6.7 5 2 7.1L0 32l9.3-2.7c2 1.1 4.4 1.7 6.7 1.7 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8z"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
+          <a class="btn primary focus-ring btn-icon" style="margin-top:16px;width:100%" href="https://wa.me/33626967239" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15.2" fill="#25D366"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
             Lancer ma boutique
           </a>
           <p class="muted" style="text-align:center;margin-top:8px;font-size:12px">Parfait pour débuter en e-commerce.</p>
@@ -258,7 +262,7 @@
       </div>
       <div style="text-align:center;margin-top:24px">
         <a class="btn primary soft focus-ring btn-icon" href="https://wa.me/33626967239" target="_blank" rel="noopener">
-          <svg class="ic" width="18" height="18" viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 .8C7.6.8.8 7.6.8 16c0 2.6.7 5 2 7.1L0 32l9.3-2.7c2 1.1 4.4 1.7 6.7 1.7 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8z"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
+          <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15.2" fill="#25D366"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
           Parler de mon projet
         </a>
       </div>
@@ -311,18 +315,22 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact (CTA final) -->
   <section id="contact" class="cta-final">
     <div class="container" style="padding:48px 0">
       <h3 style="font-weight:800;font-size:28px;margin:0">Contact</h3>
       <p style="margin:8px 0 0;color:#cbd5e1">Discutons de ton projet — réponse rapide.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px">
         <a class="btn white soft focus-ring btn-icon" href="https://wa.me/33626967239" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
-          <svg class="ic" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 .8C7.6.8.8 7.6.8 16c0 2.6.7 5 2 7.1L0 32l9.3-2.7c2 1.1 4.4 1.7 6.7 1.7 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8z"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
+          <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15.2" fill="#25D366"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
           WhatsApp
         </a>
-        <a class="btn soft focus-ring btn-icon" href="mailto:contact.webzenpro@gmail.com" aria-label="Nous écrire par email" style="border-color:#fff;color:#fff">
-          <svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 13.065L1.5 6h21L12 13.065z"/><path fill="#fff" d="M12 15.935L1.5 9V18c0 .552.448 1 1 1h19c.552 0 1-.448 1-1V9L12 15.935z"/></svg>
+        <!-- BOTTOM: Email — icône visible (fond sombre, icône blanche) -->
+        <a class="btn soft focus-ring btn-icon dark-outline" href="mailto:contact.webzenpro@gmail.com" aria-label="Nous écrire par email">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#fff" d="M12 13.065L1.5 6h21L12 13.065z"/>
+            <path fill="#fff" d="M12 15.935L1.5 9V18c0 .552.448 1 1 1h19c.552 0 1-.448 1-1V9L12 15.935z"/>
+          </svg>
           Email
         </a>
       </div>
@@ -347,8 +355,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
