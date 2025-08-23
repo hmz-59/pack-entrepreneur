@@ -41,7 +41,6 @@
     .btn.mail{background:var(--brand);color:#fff;border-color:var(--brand)}
     .btn.white{background:#fff;color:var(--text);border-color:#fff}
     .btn.dark-outline{border-color:#fff;color:#fff}
-
     .btn-icon{display:inline-flex;align-items:center;gap:10px}
     .icon{width:20px;height:20px;display:inline-block;vertical-align:middle;flex:0 0 auto}
 
@@ -105,7 +104,7 @@
         <a class="focus-ring" href="#contact">Contact</a>
       </nav>
       <div class="cta-row">
-        <!-- Header: WA + Mail (icônes visibles) -->
+        <!-- Header: WA + Mail -->
         <a class="btn wa btn-icon focus-ring" href="https://wa.me/33626967239" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp">
           <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
             <circle cx="16" cy="16" r="15.2" fill="#25D366"/>
@@ -124,7 +123,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero (bannière) — WhatsApp retiré, on garde seulement "Voir les packs" -->
   <section id="top" class="hero hero-bg">
     <div class="overlay"></div>
     <div class="container inner">
@@ -133,14 +132,6 @@
       <p>Site vitrine ou boutique Shopify clé en main. Tu contactes, on construit, tu encaisses. Paiement <b>par virement</b>.</p>
       <div class="actions">
         <a class="btn white soft focus-ring" href="#packs" aria-label="Voir les packs">Voir les packs</a>
-        <!-- HERO: bouton WhatsApp corrigé -->
-        <a class="btn dark-outline soft focus-ring btn-icon" href="https://wa.me/33626967239" target="_blank" rel="noopener" aria-label="Parler sur WhatsApp">
-          <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-            <circle cx="16" cy="16" r="15.2" fill="#25D366"/>
-            <path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/>
-          </svg>
-          Parler sur WhatsApp
-        </a>
       </div>
     </div>
   </section>
@@ -325,7 +316,6 @@
           <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15.2" fill="#25D366"/><path fill="#fff" d="M24.4 19.1c-.1.3-.5.6-1 .9-.5.2-1 .4-1.6.4-.4 0-.8 0-1.2-.1-.4-.1-.9-.3-1.5-.6-.5-.3-1.2-.7-2-1.3-1.1-.8-2.1-1.9-2.9-3.1-.4-.6-.8-1.3-1-2-.3-.7-.4-1.4-.4-2 0-.6.2-1.1.5-1.5.2-.3.5-.6.8-.7.2-.1.4-.1.6 0 .2.1.4.4.6.8.2.4.4.8.4 1.1 0 .3-.1.6-.2.8-.1.3-.3.5-.4.6-.1.2-.3.3-.4.5-.1.1-.2.3-.1.5.1.2.2.4.4.6.2.2.4.5.7.8.5.6 1.2 1.2 1.9 1.7.7.5 1.3.8 1.8 1.1.2.1.4.2.6.3.2.1.4.1.5.1.2 0 .3 0 .5-.2.2-.2.5-.5.7-.8.2-.3.4-.4.6-.4.1 0 .3 0 .5.1.2.1.5.1.7.2.3.1.6.3.8.4.2.2.4.3.5.5.2.2.2.4.1.7z"/></svg>
           WhatsApp
         </a>
-        <!-- BOTTOM: Email — icône visible (fond sombre, icône blanche) -->
         <a class="btn soft focus-ring btn-icon dark-outline" href="mailto:contact.webzenpro@gmail.com" aria-label="Nous écrire par email">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
             <path fill="#fff" d="M12 13.065L1.5 6h21L12 13.065z"/>
@@ -358,3 +348,4 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
